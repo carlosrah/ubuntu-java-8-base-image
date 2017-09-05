@@ -11,6 +11,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive  apt-get install -y --force-yes locales curl vim nano sudo tar bash zip unzip wget rsync oracle-java8-installer oracle-java8-set-default
+RUN DEBIAN_FRONTEND=noninteractive  apt-get install -y --force-yes locales curl net-tools vim nano sudo tar bash zip unzip wget rsync oracle-java8-installer oracle-java8-set-default
 RUN locale-gen en_US.UTF-8 
 RUN apt-get clean
